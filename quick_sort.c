@@ -8,6 +8,10 @@ int src[NUM];
 
 void quick_sort()
 {
+    int i, j, k;
+    int mid;
+
+    if()
 
 
 
