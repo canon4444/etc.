@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define RATE 50
+
 int Good_night(int number);
 
 int main(void)
@@ -25,5 +27,5 @@ int main(void)
 
 int Good_night(int number)
 {
-    return (number % 2) & (rand() % 2);
+    return (RATE < rand() % 100 + number);
 }
