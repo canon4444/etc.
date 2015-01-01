@@ -9,14 +9,26 @@ int src[NUM];
 void quick_sort()
 {
     int i, j, k;
-    int mid;
+    int min, mid, max, tmp;
 
-    if ( src[0] < b ) max = b, min = a;
-    else max = a, min = b;
+    min = 0, mid = NUM / 2 - 1, max = NUM - 1;
+    if ( src[mid] < src[min] ){
+        tmp = min;
+        min = mid;
+        mid = tmp;
+    } else {
+        max = a, min = b;
     if ( c < min ) mid = min;
     else if ( max < c ) mid = max;
     else mid = c;
 
+/*
+    if ( a < b ) max = b, min = a;
+    else max = a, min = b;
+    if ( c < min ) mid = min;
+    else if ( max < c ) mid = max;
+    else mid = c;
+*/
 
 
 }
