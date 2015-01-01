@@ -24,7 +24,8 @@ void quick_sort()
     src[NUM / 2 - 1] = src[mid];
     src[mid] = tmp;
 
-    for( max = 0; max < mid; ++max )
+    for( max = 0; sec[mid] < src[max]; ++max ) ;
+    for
 
 
 
