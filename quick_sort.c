@@ -11,24 +11,21 @@ void quick_sort()
     int i, j, k;
     int min, mid, max, tmp;
 
+    //中央値を選択
     min = 0, mid = NUM / 2 - 1, max = NUM - 1;
     if ( src[mid] < src[min] ){
         tmp = min;
         min = mid;
         mid = tmp;
-    } else {
-        max = a, min = b;
-    if ( c < min ) mid = min;
-    else if ( max < c ) mid = max;
-    else mid = c;
+    }
+    if ( src[max] < src[min] ) mid = min;
+    else if ( src[max] < src[mid] ) mid = max;
+    tmp = src[NUM / 2 - 1];
+    src[NUM / 2 - 1] = src[mid];
+    src[mid] = tmp;
 
-/*
-    if ( a < b ) max = b, min = a;
-    else max = a, min = b;
-    if ( c < min ) mid = min;
-    else if ( max < c ) mid = max;
-    else mid = c;
-*/
+    for( max = 0; max < mid; ++max )
+
 
 
 }
