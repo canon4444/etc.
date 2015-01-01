@@ -11,7 +11,7 @@ void quick_sort()
     int i, j, k;
     int mid;
 
-    if ( a < b ) max = b, min = a;
+    if ( src[0] < b ) max = b, min = a;
     else max = a, min = b;
     if ( c < min ) mid = min;
     else if ( max < c ) mid = max;
