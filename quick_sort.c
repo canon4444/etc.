@@ -18,12 +18,11 @@ void middle_value(int min, int mid, int max)
     }
 }
 
-void quick_sort()
+void quick_sort(int min, int max)
 {
     int i, j, k;
-    int min, mid, max, tmp;
+    int mid = (max - min) / 2, tmp;
 
-    min = 0, mid = NUM / 2 - 1, max = NUM - 1;
     middle_value(min, mid, max);
     /*
     while( 1 ){
@@ -47,7 +46,7 @@ int main()
     
     for( i = 0; i < NUM; ++i ) src[i] = rand() % NUM;
     
-    quick_sort();
+    quick_sort(0, NUM-1);
     
     //for( i = 0; i < NUM; ++i ) printf("%d ", src[i]);
     
