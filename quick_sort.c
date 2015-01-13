@@ -6,24 +6,26 @@
 
 int src[NUM];
 
+//中央値を選択
+void middle_value(int min, int mid, int max)
+{
+    int tmp;
+    
+    while( 1 ){
+        if( src[min] <= src[mid] && src[mid] <= src[max] ) break;
+        if( rand() % 2 ) tmp = src[min], src[min] = src[mid], src[mid] = tmp;
+        else tmp = src[max], src[max] = src[mid], src[mid] = tmp;
+    }
+}
+
 void quick_sort()
 {
     int i, j, k;
     int min, mid, max, tmp;
 
-    //中央値を選択
     min = 0, mid = NUM / 2 - 1, max = NUM - 1;
-    if ( src[mid] < src[min] ){
-        tmp = min;
-        min = mid;
-        mid = tmp;
-    }
-    if ( src[max] < src[min] ) mid = min;
-    else if ( src[max] < src[mid] ) mid = max;
-    tmp = src[NUM / 2 - 1];
-    src[NUM / 2 - 1] = src[mid];
-    src[mid] = tmp;
-
+    middle_value(min, mid, max);
+    /*
     while( 1 ){
         for( max = 0; max < mid; ++max )
             if( src[mid] < src[max] ) break;
@@ -34,6 +36,7 @@ void quick_sort()
         src[max] = src[min];
         src[min] = tmp;
     }
+    */
 }
 
 int main()
@@ -46,7 +49,7 @@ int main()
     
     quick_sort();
     
-    for( i = 0; i < NUM; ++i ){ printf("%d", src[i]); if( i & !(i%6) ) printf("\n"); }
+    //for( i = 0; i < NUM; ++i ) printf("%d ", src[i]);
     
     return 0;
 }
