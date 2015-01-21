@@ -16,7 +16,7 @@ int main() {
 
 /* template init する */
     for ( i = 0; i < N; ++i )
-        template[i] = i + 1;
+        template[i] = i + 1; //1〜Nを格納
     for ( i = 0; i < N; ++i )
         printf( "template[%d] : %d\n", i, template[i] );
     printf ( "\n" );
@@ -24,7 +24,7 @@ int main() {
 /* chrome init する（templateをinitしてから） */
     for ( i = 0; i < N; ++i ) {
         for ( j = 0; j < N; ++j )
-            chrome[i][j] = ((template[j]+i) % 15) + 1;
+            chrome[i][j] = ((template[j]+i) % 15) + 1; //2〜15〜1, 3〜15〜2, ……と階段状に格納
         chrome[i][N] = 0;
     }
     for ( i = 0; i < N; ++i ) {
